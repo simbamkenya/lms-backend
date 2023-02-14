@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 
 const InventorySchema = new mongoose.Schema({
-    book: {
-        type: String,
-        required: true
-    },
+    book: [{
+            type: mongoose.Types.ObjectId,
+        ref: 'Book'
+    }],
     quantity: {
         type: Number,
         required: true

@@ -18,11 +18,15 @@ const BookSchema = new mongoose.Schema({
         ref: 'Category',
         required: true
     },
-    borrow: {
+   books: [
+    {
         type: mongoose.Types.ObjectId,
-        ref: 'Borrow',
-        required: true
+        ref: 'Book'
     }
+   ]
+    
+    
 })
+
 
 exports.Book = mongoose.model('Book', BookSchema);

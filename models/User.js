@@ -9,7 +9,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    password: {
+    passwordHash: {
         type: String,
         required: true
     },
@@ -24,6 +24,14 @@ const UserSchema = new mongoose.Schema({
     gender: {
         type: String,
         required: true
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
+    borrowedBooks: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Lent'
     }
 })
 
